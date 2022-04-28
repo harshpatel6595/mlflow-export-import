@@ -74,11 +74,10 @@ def import_all(input_dir, delete_model, use_src_user_id, import_metadata_tags, v
     model_res = _import_models(input_dir, run_info_map, delete_model, verbose, use_threads)
     duration = round(time.time() - start_time, 1)
     dct = { "duration": duration, "experiment_import": exp_res[1], "model_import": model_res }
-    # fs = _filesystem.get_filesystem(".")
-    # utils.write_json_file(fs, "import_report.json", dct)
+    fs = _filesystem.get_filesystem(".")
+    utils.write_json_file(fs, "import_report.json", dct)
     print("\nImport report:")
-    # print(json.dumps(dct,indent=2)+"\n")
-    print(dct)
+    print(json.dumps(dct,indent=2)+"\n")
 
 
 @click.command()
