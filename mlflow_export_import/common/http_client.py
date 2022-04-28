@@ -50,9 +50,11 @@ class HttpClient():
         return json.loads(self._post(resource, data).text)
 
     def _mk_headers(self):
-        headers = { "User-Agent": USER_AGENT }
+        # headers = { "User-Agent": USER_AGENT }
+        headers = {}
         if self.token:
-            headers["Authorization"] = f"Bearer {self.token}" 
+            # headers["Authorization"] = f"Bearer {self.token}" 
+            headers = {'Authorization': 'Bearer ' + self.token}
         return headers
 
     def _mk_uri(self, resource):
