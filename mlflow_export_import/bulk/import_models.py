@@ -77,7 +77,8 @@ def import_all(input_dir, delete_model, use_src_user_id, import_metadata_tags, v
     # fs = _filesystem.get_filesystem(".")
     # utils.write_json_file(fs, "import_report.json", dct)
     print("\nImport report:")
-    print(json.dumps(dct,indent=2)+"\n")
+    # print(json.dumps(dct,indent=2)+"\n")
+    print(dct)
 
 
 @click.command()
